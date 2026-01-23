@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clean, light background inspired by Autono template */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+
+    /* Card with subtle warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Primary - deep charcoal/black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary - soft gray */
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 20%;
+
+    /* Muted tones */
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - subtle highlight */
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 8%;
+
+    --radius: 0;
+
+    /* Typography - clean sans-serif */
+    --font-display: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Spacing scale */
+    --section-padding: 6rem;
+    --content-max-width: 72rem;
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 8%;
+  }
+
+  .dark {
+    /* Dark mode variant */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 80%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 95%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 95%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    @apply tracking-wide font-medium;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    line-height: 1.15;
+    letter-spacing: 0.2em;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl;
+    line-height: 1.25;
+  }
+
+  /* Elegant selection */
+  ::selection {
+    background: hsl(0 0% 8% / 0.15);
+    color: hsl(0 0% 8%);
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto max-w-3xl px-6 md:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-6xl px-6 md:px-8;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-32;
+  }
+
+  .section-spacing-sm {
+    @apply py-16 md:py-20;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .disclosure-text {
+    @apply text-xs text-muted-foreground leading-relaxed tracking-widest uppercase;
+  }
+
+  .microcopy {
+    @apply text-xs text-muted-foreground mt-3 tracking-widest uppercase;
+  }
+
+  /* Modern underline link */
+  .link-elegant {
+    @apply relative inline-block text-foreground hover:text-muted-foreground transition-colors duration-300;
+    letter-spacing: 0.15em;
+  }
+
+  .link-elegant::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-full h-px bg-foreground scale-x-100 origin-left transition-transform duration-300;
+  }
+
+  .link-elegant:hover::after {
+    @apply scale-x-0 origin-right;
+  }
+
+  /* Minimal separator */
+  .separator-accent {
+    @apply w-8 h-px bg-foreground;
+  }
+
+  /* Card with subtle shadow */
+  .card-modern {
+    @apply bg-card border border-border shadow-sm;
+  }
+
+  /* Hero full-screen */
+  .hero-fullscreen {
+    @apply min-h-screen flex items-center justify-center relative;
+  }
+
+  /* Gradient overlay for hero images */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 text-center;
+  }
+
+  .stat-item {
+    @apply flex flex-col items-center;
+  }
+
+  .stat-number {
+    @apply text-4xl md:text-5xl font-medium tracking-wider;
+    font-family: var(--font-display);
+  }
+
+  .stat-label {
+    @apply text-xs tracking-widest uppercase text-muted-foreground mt-2;
+  }
+}
+
+/* Smooth fade-in animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1.2s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Custom classes for the Aurelian Labs site */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF37, #F4E4BC, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.circuit-bg {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    linear-gradient(0deg, transparent 24%, rgba(212, 175, 55, 0.05) 25%, rgba(212, 175, 55, 0.05) 26%, transparent 27%, transparent 74%, rgba(212, 175, 55, 0.05) 75%, rgba(212, 175, 55, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(212, 175, 55, 0.05) 25%, rgba(212, 175, 55, 0.05) 26%, transparent 27%, transparent 74%, rgba(212, 175, 55, 0.05) 75%, rgba(212, 175, 55, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

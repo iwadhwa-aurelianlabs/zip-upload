@@ -1,0 +1,115 @@
+{
+  "project_name": "Aurelian Labs",
+  "version": "1.0.0",
+  "brand_identity": {
+    "fonts": {
+      "primary_serif": "Cinzel",
+      "secondary_sans": "Lato",
+      "code_mono": "Share Tech Mono"
+    },
+    "colors": {
+      "primary_dark": "#031811",
+      "secondary_cream": "#FDFCF8",
+      "accent_gold": "#D4AF37",
+      "gold_gradient": "linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)",
+      "overlays": {
+        "matrix_grid": "rgba(212, 175, 55, 0.1)",
+        "circuit_pattern": "radial-gradient(#D4AF37 1px, transparent 1px)"
+      }
+    }
+  },
+  "sitemap": {
+    "home": {
+      "route": "/",
+      "component": "AurelianLabsLanding.jsx",
+      "purpose": "Traffic Controller / Brand Authority",
+      "target_audience": "General / Mixed"
+    },
+    "capital": {
+      "route": "/lending",
+      "component": "AurelianCapitalSolutions.jsx",
+      "purpose": "Revenue Engine / Structuring",
+      "target_audience": "Business Borrowers"
+    },
+    "platform": {
+      "route": "/platform",
+      "component": "AurelianPlatform.jsx",
+      "purpose": "Tech Showcase / Partner Portal",
+      "target_audience": "Equity Partners / Banks"
+    },
+    "team": {
+      "route": "/team",
+      "component": "AurelianTeam.jsx",
+      "purpose": "Trust & Governance",
+      "target_audience": "Investors"
+    },
+    "hbh": {
+      "route": "/hbh-prequal",
+      "component": "AurelianHBH.jsx",
+      "purpose": "Consumer Mortgage Intake",
+      "target_audience": "Home Buyers (B2C)"
+    }
+  },
+  "team_data": [
+    {
+      "name": "Nathaniel Norman",
+      "role": "Managing Partner",
+      "department": "Architecture",
+      "tag": "STRATEGY"
+    },
+    {
+      "name": "Ryan Levychin",
+      "role": "Head of Capital Markets",
+      "department": "Capital Solutions",
+      "tag": "CAPITAL"
+    },
+    {
+      "name": "Xavier Huang",
+      "role": "Head of Technology",
+      "department": "Platform Engineering",
+      "tag": "PLATFORM"
+    },
+    {
+      "name": "Lyndsay Goldfarb",
+      "role": "Head of Strategic Operations",
+      "department": "Operations",
+      "tag": "OPS"
+    },
+    {
+      "name": "Paul White",
+      "role": "Head of Credit",
+      "department": "Underwriting",
+      "tag": "RISK"
+    },
+    {
+      "name": "Ishita Wadhwa",
+      "role": "Head of Product",
+      "department": "Engineering",
+      "tag": "PRODUCT"
+    }
+  ],
+  "intake_forms": {
+    "capital_audit": {
+      "location": "/lending",
+      "fields": [
+        "Full Name",
+        "Company Name",
+        "Revenue",
+        "Request Amount",
+        "Collateral Type"
+      ],
+      "tone": "Corporate / Strict"
+    },
+    "hbh_prequal": {
+      "location": "/hbh-prequal",
+      "fields": [
+        "Name",
+        "Email",
+        "Phone",
+        "Location",
+        "Budget Range"
+      ],
+      "tone": "Soft / Welcoming"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+# Ryan's Aurelian Labs Website Update\n\nThis folder contains the configuration and summary for the multi-page website optimization completed on Sat Jan 17 11:53:30 PM UTC 2026.\n\n### Changes:\n- Integrated Home, Lending, Platform, Team, and HBH pages.\n- Optimized UI with Cinzel/Lato fonts and Gold/Green branding.\n- Configured React Router for multi-page navigation.
