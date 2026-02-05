@@ -74,12 +74,6 @@ const AurelianTeam = () => {
               <p className="font-lato text-gray-400 text-sm">Commitment to Innovation</p>
             </div>
           </div>
-          
-          <div className="mt-12">
-            <a href="/lending" className="inline-flex items-center gap-3 border border-[#D4AF37] text-[#D4AF37] px-8 py-4 font-cinzel font-bold tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#031811] transition-all">
-              Join Our Network <ChevronRight className="w-4 h-4" />
-            </a>
-          </div>
         </div>
       </section>
     </>
